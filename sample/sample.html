@@ -4,40 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <title>テスト</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
 </head>
 
 <body>
   <h1>ハローサイテック！</h1>
-
   <input type="text" id="inputText" placeholder="ここに入力">
-  <button id="displayBtn">表示</button>
-  <p id="outputArea"></p>
-
+  <button id="displayBtn">入力を表示</button>
+  <div id="outputArea"></div>
   <button id="bgChangeBtn">背景色を変更</button>
 
-  <script>
-    // 表示機能
-    document.getElementById("displayBtn").addEventListener("click", function () {
-      const input = document.getElementById("inputText").value;
-      const outputArea = document.getElementById("outputArea");
-
-      if (input.trim() === "") {
-        alert("入力値が空です。");
-        return;
-      }
-
-      outputArea.textContent = input;
-    });
-
-    // 背景色変更機能
-    const colors = ["lightblue", "lightgreen", "lightcoral"];
-    let currentColorIndex = 0;
-
-    document.getElementById("bgChangeBtn").addEventListener("click", function () {
-      document.body.style.backgroundColor = colors[currentColorIndex];
-      currentColorIndex = (currentColorIndex + 1) % colors.length;
-    });
-  </script>
+  <script src="sample.js"></script>
 </body>
 
 </html>
