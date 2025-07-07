@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>テスト</title>
 </head>
+
 <body>
   <h1>ハローサイテック！</h1>
-  <script src="sample.js"></script>
+  <input type="text" id="inputText" placeholder="ここに入力">
+  <button id="displayBtn">表示</button>
+  <p id="outputArea"></p>
+
+  <script>
+    document.getElementById("displayBtn").addEventListener("click", function () {
+      const input = document.getElementById("inputText").value;
+      const outputArea = document.getElementById("outputArea");
+
+      if (input.trim() === "") {
+        alert("入力値が空です。");
+        return;
+      }
+
+      outputArea.textContent = input;
+    });
+  </script>
 </body>
+
 </html>
