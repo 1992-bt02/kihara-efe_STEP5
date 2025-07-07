@@ -8,7 +8,14 @@ document.getElementById("displayBtn").addEventListener("click", function () {
     return;
   }
 
-  outputArea.textContent = input;
+  const tableHTML = `
+    <table border="1">
+      <tr>
+        <td>${input}</td>
+      </tr>
+    </table>
+  `;
+  outputArea.innerHTML = tableHTML;
   outputArea.classList.toggle("highlight"); // ← ここが設問3のポイント！
 });
 
