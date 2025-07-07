@@ -9,3 +9,10 @@ document.getElementById("displayBtn").addEventListener("click", function () {
 
   outputArea.textContent = input;
 });
+const colors = ["lightblue", "lightgreen", "lightcoral"];
+let currentColorIndex = 0;
+
+document.getElementById("bgChangeBtn").addEventListener("click", function () {
+  document.body.style.backgroundColor = colors[currentColorIndex];
+  currentColorIndex = (currentColorIndex + 1) % colors.length;
+});
