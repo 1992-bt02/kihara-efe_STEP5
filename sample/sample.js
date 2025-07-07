@@ -38,6 +38,15 @@ document.getElementById("displayBtn").addEventListener("click", function () {
   deleteCell.appendChild(deleteBtn);
   newRow.appendChild(textCell);
   newRow.appendChild(deleteCell);
+ // 行クリックで選択状態を切り替える
+newRow.addEventListener("click", function () {
+  // すでに選択されている行を全部解除
+  const allRows = table.querySelectorAll("tr");
+  allRows.forEach((row) => row.classList.remove("selected"));
+
+  // この行だけ選択状態にする
+  newRow.classList.add("selected");
+});
 
   table.appendChild(newRow);
 
