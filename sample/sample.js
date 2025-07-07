@@ -12,18 +12,16 @@ document.getElementById("displayBtn").addEventListener("click", function () {
     <table border="1">
       <tr>
         <td>${input}</td>
+        <td><button class="deleteBtn">削除</button></td>
       </tr>
     </table>
   `;
+
   outputArea.innerHTML = tableHTML;
-  outputArea.classList.toggle("highlight"); // ← ここが設問3のポイント！
-});
+  outputArea.classList.toggle("highlight");
 
-// 背景色切り替え機能
-const colors = ["lightblue", "lightgreen", "lightcoral"];
-let currentColorIndex = 0;
-
-document.getElementById("bgChangeBtn").addEventListener("click", function () {
-  document.body.style.backgroundColor = colors[currentColorIndex];
-  currentColorIndex = (currentColorIndex + 1) % colors.length;
+  // 削除ボタンにイベント追加
+  document.querySelector(".deleteBtn").addEventListener("click", function () {
+    this.closest("tr").remove();
+  });
 });
