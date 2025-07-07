@@ -9,6 +9,7 @@ document.getElementById("displayBtn").addEventListener("click", function () {
 
   outputArea.textContent = input;
 });
+outputArea.classList.toggle("highlight");
 const colors = ["lightblue", "lightgreen", "lightcoral"];
 let currentColorIndex = 0;
 
