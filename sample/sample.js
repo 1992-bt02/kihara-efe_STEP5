@@ -39,11 +39,18 @@ document.getElementById("displayBtn").addEventListener("click", function () {
   newRow.appendChild(textCell);
   newRow.appendChild(deleteCell);
  // 行クリックで選択状態を切り替える
-newRow.addEventListener("click", function () {
-  // すでに選択されている行を全部解除
-  const allRows = table.querySelectorAll("tr");
-  allRows.forEach((row) => row.classList.remove("selected"));
-
+  newRow.addEventListener("click", function () {
+  newRow.addEventListener("click", function () {
+  // すでにこの行が選択されていれば解除
+  if (newRow.classList.contains("selected")) {
+    newRow.classList.remove("selected");
+  } else {
+    // 他の行はすべて解除して、この行だけ選択状態に
+    const allRows = table.querySelectorAll("tr");
+    allRows.forEach((row) => row.classList.remove("selected"));
+    newRow.classList.add("selected");
+  }
+});  
   // この行だけ選択状態にする
   newRow.classList.add("selected");
 });
